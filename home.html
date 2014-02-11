@@ -1,0 +1,73 @@
+<head>
+	<title>CDTM Info Screen</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery-1.11.0.min.js"></script>
+	<script src="./getpics.php"></script>
+</head> 
+
+<a href="home.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="events.html">Events</a>
+<a href="facebook.html">Facebook Wall</a>
+<a href="blog.html">Blog</a>
+<br/>
+<br/>
+
+
+Welcome to CDTM Info Screen
+<br/>
+<br/>
+<em>Testing news and pics inclusion from a dumbo samba share!</em>
+
+<br/>
+<br/>
+
+<form action="javascript: location.reload(true);">
+    <input type="submit" value="Refresh this page">
+</form>
+
+<br/>
+<br/>
+<br/>
+
+News Section
+<br/>
+<!-- width is given in chars -->
+<pre width="80"> 
+	<div class="news">
+	</div>
+</pre>
+
+<br/>
+<br/>
+<br/>
+
+Pictures Section
+<br/>
+<br/>
+<div class="pics">
+	<img id="slideshow" src="pictures/logo.jpg" />
+</div>
+
+
+
+
+<script>
+	// Load News Contents
+	$(document).ready(function() {
+	 	$('.news').load('./news.txt');
+	});
+</script>
+
+<script type="text/javascript">
+	// Load Pictures
+	var curimg=0
+	function rotateimages(){
+		document.getElementById("slideshow").setAttribute("src", "pictures/"+galleryarray[curimg])
+		curimg=(curimg<galleryarray.length-1)? curimg+1 : 0
+	}
+
+	window.onload=function(){
+		setInterval("rotateimages()", 2000)
+	}
+</script>

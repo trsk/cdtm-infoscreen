@@ -1,0 +1,13 @@
+.pics{
+	border: 1px solid;
+	width: 300px;
+	height: 300px;
+	text-align: center;
+    display: table-cell;
+    vertical-align: middle
+}
+
+#slideshow{
+	max-width: 300px;
+	max-height: 300px;
+}
